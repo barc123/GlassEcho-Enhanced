@@ -16,6 +16,7 @@ android {
         targetSdkVersion 34
         versionCode 2
         versionName "0.2.0"
+        multiDexEnabled true
     }
 
     buildFeatures {
@@ -40,19 +41,19 @@ android {
 }
 
 dependencies {
-    def fragment_version = "1.6.0"
-    def lifecycle_version = "2.6.1"
+    def fragment_version = "1.6.2"
+    def lifecycle_version = "2.7.0"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(path: ':common')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
-    implementation 'androidx.recyclerview:recyclerview:1.3.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
@@ -64,4 +65,7 @@ dependencies {
     implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
 
     kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.android.support:multidex:1.0.3'
 }
