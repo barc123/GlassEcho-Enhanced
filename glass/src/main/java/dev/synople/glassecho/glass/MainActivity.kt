@@ -1,8 +1,12 @@
 package dev.synople.glassecho.glass
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.MotionEvent
 import androidx.fragment.app.FragmentActivity
+import dev.synople.glassecho.common.models.EchoNotificationAction
+import dev.synople.glassecho.glass.utils.Constants
 import dev.synople.glassecho.glass.utils.GlassGesture
 import dev.synople.glassecho.glass.utils.GlassGestureDetector
 import org.greenrobot.eventbus.EventBus
@@ -38,6 +42,12 @@ class MainActivity : FragmentActivity() {
                     return isHandled
                 }
             })
+
+        val notificationAction = intent?.getParcelableExtra<EchoNotificationAction>(Constants.EXTRA_NOTIFICATION_ACTION)
+        if(notificationAction != null){
+            write(notificationAction as Parcelable)
+            finish()
+        }
     }
 
     // For Glass XE
@@ -54,5 +64,13 @@ class MainActivity : FragmentActivity() {
             return gestureDetector.onTouchEvent(event)
         }
         return super.dispatchTouchEvent(event)
+    }
+
+    private fun write(message: Parcelable) {
+        startService(Intent(this, EchoService::class.java).apply {
+            putExtra(
+                Constants.EXTRA_NOTIFICATION_ACTION, message
+            )
+        })
     }
 }

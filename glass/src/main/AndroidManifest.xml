@@ -4,6 +4,8 @@
 
     <uses-feature android:name="android.hardware.bluetooth" />
 
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
@@ -35,6 +37,8 @@
                 android:name="com.google.android.glass.VoiceTrigger"
                 android:resource="@xml/voice_trigger" />
         </activity>
+
+        <activity android:name=".NotificationCancelReceiver"></activity>
 
         <service
             android:name=".EchoService"

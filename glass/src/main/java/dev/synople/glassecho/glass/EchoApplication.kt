@@ -1,8 +1,8 @@
 package dev.synople.glassecho.glass
 
-import android.app.Application
+import androidx.multidex.MultiDexApplication
 
-class EchoApplication : Application() {
+class EchoApplication : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()

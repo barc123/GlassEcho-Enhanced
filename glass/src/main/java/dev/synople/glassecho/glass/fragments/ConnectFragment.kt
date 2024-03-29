@@ -101,11 +101,13 @@ class ConnectFragment : Fragment(R.layout.fragment_connect) {
         setHasOptionsMenu(true)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.connect_fragment, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_delete -> {
@@ -250,6 +252,7 @@ class ConnectFragment : Fragment(R.layout.fragment_connect) {
         BluetoothAdapter.getDefaultAdapter().cancelDiscovery()
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         IntentIntegrator.parseActivityResult(requestCode, resultCode, data)?.let { barcodeResult ->

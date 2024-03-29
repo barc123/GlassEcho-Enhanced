@@ -6,7 +6,20 @@
         <State />
       </entry>
       <entry key="phone">
-        <State />
+        <State>
+          <runningDeviceTargetSelectedWithDropDown>
+            <Target>
+              <type value="RUNNING_DEVICE_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="SERIAL_NUMBER" />
+                  <value value="0WP1A0AA15400829" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </runningDeviceTargetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-03-22T20:42:44.769457Z" />
+        </State>
       </entry>
     </value>
   </component>
